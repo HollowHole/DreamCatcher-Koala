@@ -1,9 +1,10 @@
-
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
 {
+    [Tooltip("生成对象")]
     public GameObject SpawningBalls;
 
     [SerializeField]List<Fireballs> ExistingBalls;
