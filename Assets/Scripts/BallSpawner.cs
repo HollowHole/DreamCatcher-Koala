@@ -7,7 +7,7 @@ public class BallSpawner : MonoBehaviour
     public GameObject SpawningBalls;
 
     [SerializeField]List<Fireballs> ExistingBalls;
-    
+    public Transform SpawnedObjects;
 
     public int MaxBallCount = 5;
 
@@ -44,9 +44,7 @@ public class BallSpawner : MonoBehaviour
 
     private void DoSpawn()
     {
-        Fireballs go = Instantiate(SpawningBalls, transform).GetComponent<Fireballs>();
-
-        Debug.Log("Spawn Seccessfully!");
+        Fireballs go = Instantiate(SpawningBalls, SpawnedObjects).GetComponent<Fireballs>();
 
         go.SetSpawner(this);
         //SpawnOffset

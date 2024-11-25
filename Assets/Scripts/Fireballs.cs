@@ -35,7 +35,9 @@ public class Fireballs : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
+            //TODO: End the Game;
         }
+        //else if (other.CompareTag("Wall"))  //TODO
     }
     private void OnDestroy()
     {
