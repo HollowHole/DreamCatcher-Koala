@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Fireballs : MonoBehaviour
@@ -9,6 +10,7 @@ public class Fireballs : MonoBehaviour
     PlayerController Player;
     public float disappearDistance = 20f;
     BallSpawner ballSpawner;
+    private Vector2 Gravity;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,6 +22,7 @@ public class Fireballs : MonoBehaviour
     }
     private void Update()
     {
+        rb.velocity += Gravity;
         Vector3 Distance = Player.transform.position - transform.position;
         if (Distance.magnitude > disappearDistance)
         {
@@ -29,6 +32,10 @@ public class Fireballs : MonoBehaviour
     public void SetSpawner(BallSpawner bs)
     {
         ballSpawner = bs;
+    }
+    public void SetGravity(float gravity)
+    {
+        Gravity = new Vector2(0,-gravity);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
