@@ -7,10 +7,30 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
     float inputHorizontal;
-    
+
     Rigidbody2D rb;
     public float FallingSpeed = 8f;
     public float HorizontalSpeed = 2f;
+    public Action<int> HpChange;
+    
+    public int Hp {
+        get
+        {
+            return hp;
+        }
+        set
+        {
+            hp = value;
+            if(hp == 0)
+            {
+                //TODO:End Game
+                HpChange?.Invoke(value);
+            }
+
+        }
+
+    }
+    [SerializeField]private int hp;
     [SerializeField] float HorSpeedScalar = 1.0f;
 
     private BuffManager buffManager;
