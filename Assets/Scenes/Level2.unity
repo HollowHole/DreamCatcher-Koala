@@ -208,6 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FallingSpeed: 7.5
   HorizontalSpeed: 8
+  hp: 0
   HorSpeedScalar: 1
   CamFollowStart: {fileID: 1002511297}
   CamFollowEnd: {fileID: 1444427639}
@@ -633,7 +634,7 @@ MonoBehaviour:
   vxRange: 0
   SpawnCD: 1
   minGravity: -0.05
-  maxGravity: -0.05
+  maxGravity: 0
 --- !u!1 &1002511296
 GameObject:
   m_ObjectHideFlags: 0
