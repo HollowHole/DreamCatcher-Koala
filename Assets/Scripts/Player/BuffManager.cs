@@ -1,14 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuffManager : MonoBehaviour
 {
-
+    [SerializeField] Image FrozenProgressFrame;
+    [SerializeField] Image FrozenProgressFiller;
+    [Tooltip("冰冻时长")]
+    public float FrozenBuffLastTime = 3f;
+    
     private List<Buff> BuffList;
     PlayerController player;
     private void Awake()
     {
+        
         BuffList = new List<Buff>();
         player = GetComponent<PlayerController>();
     }
@@ -21,7 +28,7 @@ public class BuffManager : MonoBehaviour
                 if (buff.mName == Buff.BuffName.Decelerate)
                 {
                     BuffList.Remove(b);
-                    BuffList.Add(new Buff(Buff.BuffName.Freeze, 3f));//TODO
+                    BuffList.Add(new Buff(Buff.BuffName.Freeze, FrozenBuffLastTime));//TODO:冰冻时长
                 }
                 else
                 {
@@ -38,8 +45,19 @@ public class BuffManager : MonoBehaviour
 
         BuffTakeEffect(player);
     }
+    public void SetFrozenProgress(float lastTime)
+    {
+        if(lastTime > 0)
+            FrozenProgressFrame.enabled = true;
+        else
+            FrozenProgressFrame.enabled = false;
+        FrozenProgressFiller.fillAmount = lastTime / FrozenBuffLastTime;
+    }
     public void BuffTakeEffect(PlayerController _player)
     {
+        //reset frozenProgressBar
+        SetFrozenProgress(0f);
+
         List<Buff> newList = new List<Buff>();
         foreach (Buff buff in BuffList)
         {
@@ -77,6 +95,7 @@ public class Buff
                 break;
             case BuffName.Freeze:
                 player.ChangeSpeedHor(0);
+                player.GetComponent<BuffManager>().SetFrozenProgress(LastTime);
                 break;
             default:
                 Debug.Log("Undefined Buff!");

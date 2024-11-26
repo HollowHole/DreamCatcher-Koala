@@ -9,7 +9,7 @@ public class PlayerExitZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            LevelManager.Instance.LoadNextLevel();
+            FindObjectOfType<TransitionAnim>().PlayExitAnimAndSwitchScene();
         }
 
     }

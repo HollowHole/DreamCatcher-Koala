@@ -22,6 +22,10 @@ public class Fireballs : MonoBehaviour
     }
     private void Update()
     {
+        if (Player == null)
+        {
+            return;
+        }
         rb.velocity += Gravity;
         Vector3 Distance = Player.transform.position - transform.position;
         if (Distance.magnitude > disappearDistance)

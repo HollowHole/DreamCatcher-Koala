@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     private BuffManager buffManager;
 
-    CameraController camController;
+    [SerializeField]CameraController camController;
     public Transform CamFollowStart;
     public Transform CamFollowEnd;
 
@@ -87,4 +87,5 @@ public class PlayerController : MonoBehaviour
     {
         inputHorizontal = Input.GetAxis("Horizontal");
     }
+
 }
