@@ -10,13 +10,13 @@ public class PlayerController : MonoBehaviour
     float inputHorizontal;
     bool inputCounter;
     [Tooltip("弹反半径")]
-    [SerializeField] float CounterRadius = 1.3f;
+    [SerializeField] float CounterRadius = 5f;
     [Tooltip("弹反时长")]
     [SerializeField] float CounterLastTime = 0.5f;
     [Tooltip("无敌时长")]
     [SerializeField] float InvincibalTime = 3f;
     [Tooltip("弹反CD")]
-    [SerializeField] float CounterCD = 5f;
+    [SerializeField] float CounterCD = 1f;
 
     float CounterCDTimer;
     float invincibalTimer;

@@ -1800,10 +1800,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48537b312f49bb147bb8108e679b021e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CounterRadius: 1.3
+  CounterRadius: 3.5
   CounterLastTime: 0.5
-  InvincibalTime: 3
-  CounterCD: 5
+  InvincibalTime: 1.5
+  CounterCD: 2
   FallingSpeed: 7.5
   HorizontalSpeed: 8
   hp: 5
