@@ -36,11 +36,13 @@ public class Fireballs : MonoBehaviour
             if (value)
             {
                 mImg.sprite = FriendlyImage;
+                if(animator!=null)
                 animator.runtimeAnimatorController = FriendlyAnimCrl;
             }
             else
             {
                 mImg.sprite = HostileImage;
+                if(animator!=null)
                 animator.runtimeAnimatorController = HostileAnimCrl;
             }
         }

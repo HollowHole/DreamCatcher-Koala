@@ -13,4 +13,5 @@ public class IceBall : Fireballs
             other.GetComponent<BuffManager>().AddBuff(new Buff(Buff.BuffName.Decelerate, 3f));
         }
     }
+    
 }
