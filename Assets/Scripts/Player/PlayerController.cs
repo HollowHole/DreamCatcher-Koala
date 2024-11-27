@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
             if(hp == 0)
             {
                 //TODO:End Game
-                HpChange?.Invoke(value);
             }
+            HpChange?.Invoke(value);
 
         }
 

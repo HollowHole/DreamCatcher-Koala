@@ -48,7 +48,9 @@ public class TransitionAnim : MonoBehaviour
         yield return new WaitForSecondsRealtime(TransitionAnim.TransitionLastTime);
 
         Debug.Log("Start Game");
-        Time.timeScale = 1;
+
+        if(!SettingUI.isGamePause)
+            Time.timeScale = 1;
 
         //PlayerController.Instance.FallingSpeed = playerFallingSpeed;
     }
