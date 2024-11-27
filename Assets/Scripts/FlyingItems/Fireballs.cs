@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,8 +20,8 @@ public class Fireballs : MonoBehaviour
     SpriteRenderer mImg;
     [SerializeField] Sprite HostileImage;
     [SerializeField] Sprite FriendlyImage;
-    [SerializeField] AnimatorController HostileAnimCrl;
-    [SerializeField] AnimatorController FriendlyAnimCrl;
+    [SerializeField] RuntimeAnimatorController HostileAnimCrl;
+    [SerializeField] RuntimeAnimatorController FriendlyAnimCrl;
     private bool isHostile;
     public bool Friendly
     {
@@ -36,13 +35,13 @@ public class Fireballs : MonoBehaviour
             if (value)
             {
                 mImg.sprite = FriendlyImage;
-                if(animator!=null)
+                // if(animator!=null)
                 animator.runtimeAnimatorController = FriendlyAnimCrl;
             }
             else
             {
                 mImg.sprite = HostileImage;
-                if(animator!=null)
+                // if(animator!=null)
                 animator.runtimeAnimatorController = HostileAnimCrl;
             }
         }
