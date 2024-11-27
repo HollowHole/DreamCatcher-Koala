@@ -538,7 +538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FallingSpeed: 7.5
   HorizontalSpeed: 8
-  hp: 3
+  hp: 5
   HorSpeedScalar: 1
   camController: {fileID: 643369671}
   CamFollowStart: {fileID: 1002511297}
@@ -990,7 +990,7 @@ Transform:
   m_GameObject: {fileID: 368384726}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.080000654, y: -5.7, z: 9.931938}
+  m_LocalPosition: {x: 0.080000654, y: -9.2, z: 9.931938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1011,14 +1011,14 @@ MonoBehaviour:
   SpawningBalls: {fileID: 81176550328327808, guid: 2b46f6753cc50454a9f3a022a3a356b7, type: 3}
   ExistingBalls: []
   SpawnedObjects: {fileID: 683104922}
-  MaxBallCount: 3
-  SpawnPointOffsetH: 10.12
-  minVyOffset: 0
+  MaxBallCount: 5
+  SpawnPointOffsetH: 8
+  minVyOffset: 3
   maxVyOffset: 8
-  vxRange: 4.68
-  SpawnCD: 0.22
+  vxRange: 3
+  SpawnCD: 0.5
   minGravity: 0
-  maxGravity: 0
+  maxGravity: 0.05
 --- !u!1 &373999852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,7 +1636,7 @@ Transform:
   m_GameObject: {fileID: 846652133}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.080000654, y: -6.46, z: 9.931938}
+  m_LocalPosition: {x: 0.080000654, y: -9.96, z: 9.931938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1657,10 +1657,10 @@ MonoBehaviour:
   SpawningBalls: {fileID: 3624805029777152464, guid: f709829b4e6f59a47811ffde6478008c, type: 3}
   ExistingBalls: []
   SpawnedObjects: {fileID: 683104922}
-  MaxBallCount: 3
-  SpawnPointOffsetH: 7
-  minVyOffset: -2
-  maxVyOffset: -2
+  MaxBallCount: 4
+  SpawnPointOffsetH: 9
+  minVyOffset: 0
+  maxVyOffset: 1
   vxRange: 0
   SpawnCD: 1
   minGravity: -0.05
