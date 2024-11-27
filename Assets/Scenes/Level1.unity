@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 270580823}
   m_Layer: 0
   m_Name: Level1Wall1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1718,7 +1718,7 @@ MonoBehaviour:
   HorizontalSpeed: 8
   hp: 3
   HorSpeedScalar: 1
-  camController: {fileID: 0}
+  camController: {fileID: 519420033}
   CamFollowStart: {fileID: 1781265936}
   CamFollowEnd: {fileID: 1506912510}
 --- !u!50 &1660034635
@@ -2007,7 +2007,7 @@ GameObject:
   - component: {fileID: 2020378536}
   m_Layer: 0
   m_Name: Level1Wall2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -64,7 +64,10 @@ public class Fireballs : MonoBehaviour
             Destroy(gameObject);
             other.GetComponent<PlayerController>().Hp--;
         }
-        //else if (other.CompareTag("Wall"))  //TODO
+        else if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnDestroy()
     {

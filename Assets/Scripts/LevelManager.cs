@@ -21,7 +21,7 @@ public class LevelManager
     public void LoadNextLevel()
     {
         int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        //边界处理
+        //锟竭界处锟斤拷
         if (nextLevelIndex > SceneManager.sceneCountInBuildSettings)
             nextLevelIndex = 0;
 
@@ -30,12 +30,12 @@ public class LevelManager
     }
     public void LoadNextLevelAsync()
     {
-        Camera.main.GetComponent<AudioListener>().enabled = false;
+        //Camera.main.GetComponent<AudioListener>().enabled = false;
         EventSystem.current.enabled = false;
 
         curScene = SceneManager.GetActiveScene();
         int nextLevelIndex =  curScene.buildIndex+ 1;
-        //边界处理
+        //锟竭界处锟斤拷
         if (nextLevelIndex >= SceneManager.sceneCountInBuildSettings)
             nextLevelIndex = 0;
 
