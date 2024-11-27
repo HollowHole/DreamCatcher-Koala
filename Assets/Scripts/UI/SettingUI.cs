@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -33,9 +34,9 @@ public class SettingUI : MonoBehaviour
                 PauseGame();
         }
     }
-    public void ExitGame()
+    public void GoMainMenu()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
     public void ResumeGame()
     {
