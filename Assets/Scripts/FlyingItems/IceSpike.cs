@@ -5,5 +5,8 @@ using UnityEngine;
 public class IceSpike : Fireballs
 {
     // Start is called before the first frame update
-
+    protected override void HandleRotation()
+    {
+        //Do nothing
+    }
 }

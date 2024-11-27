@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -26,13 +27,28 @@ public class Fireballs : MonoBehaviour
         {
             return;
         }
+        //Gravity
         rb.velocity += Gravity;
+
+        HandleRotation();
+        //Disappear if far away
         Vector3 Distance = Player.transform.position - transform.position;
         if (Distance.magnitude > disappearDistance)
         {
             Destroy(gameObject);
         }
     }
+
+    protected virtual void HandleRotation()
+    {
+        Vector3 origin = new Vector3(0,-1,0);
+        Vector3 v = rb.velocity;
+        float angle = Vector3.Angle(origin, v);
+        if(v.x < 0) 
+            angle = -angle;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
     public void SetSpawner(BallSpawner bs)
     {
         ballSpawner = bs;
