@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     private void HandleCameraFollowLogic()
     {
         bool targetIsCamFollow = CamFollowStart.position.y > transform.position.y && CamFollowEnd.position.y < transform.position.y;
-        camController.FollowPlayer(targetIsCamFollow);
+        camController?.FollowPlayer(targetIsCamFollow);
     }
 
     private void FixedUpdate()
