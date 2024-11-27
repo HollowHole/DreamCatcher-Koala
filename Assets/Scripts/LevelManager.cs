@@ -10,7 +10,7 @@ public class LevelManager
 {
     public static LevelManager Instance;
     public Action OnLoadNextScene;
-    private Scene curScene;
+    
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()
     {
@@ -33,7 +33,7 @@ public class LevelManager
         //Camera.main.GetComponent<AudioListener>().enabled = false;
         EventSystem.current.enabled = false;
 
-        curScene = SceneManager.GetActiveScene();
+        Scene curScene = SceneManager.GetActiveScene();
         int nextLevelIndex =  curScene.buildIndex+ 1;
         //�߽紦��
         if (nextLevelIndex >= SceneManager.sceneCountInBuildSettings)

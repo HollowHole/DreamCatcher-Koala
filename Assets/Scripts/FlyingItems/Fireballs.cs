@@ -9,13 +9,29 @@ public class Fireballs : MonoBehaviour
     Rigidbody2D rb;
     CircleCollider2D mCollider;
     PlayerController Player;
-    public float disappearDistance = 20f;
     BallSpawner ballSpawner;
+
+    public float disappearDistance = 20f;
+    
     private Vector2 Gravity;
+
+    private bool isHostile;
+    public bool Friendly
+    {
+        get
+        {
+            return !isHostile;
+        }
+        set
+        {
+            isHostile = !value;
+        }
+    }
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        mCollider = GetComponent<CircleCollider2D>(); 
+        mCollider = GetComponent<CircleCollider2D>();
+        isHostile = true;
     }
     private void Start()
     {
@@ -38,7 +54,7 @@ public class Fireballs : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     protected virtual void HandleRotation()
     {
         Vector3 origin = new Vector3(0,-1,0);
@@ -67,6 +83,14 @@ public class Fireballs : MonoBehaviour
         else if (other.CompareTag("Wall"))
         {
             Destroy(gameObject);
+        }
+        else if(other.CompareTag("Ball"))
+        {
+            if (other.GetComponent<Fireballs>().Friendly != this.Friendly)
+            {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
     private void OnDestroy()
