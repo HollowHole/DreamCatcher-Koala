@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
             hp = value;
             if(hp == 0)
             {
-                //TODO:End Game
+                GameoverMgr.Instance.Gameover();
             }
             HpChange?.Invoke(value);
 

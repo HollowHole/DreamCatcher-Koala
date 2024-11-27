@@ -25,7 +25,7 @@ public class SettingUI : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!GameoverMgr.isGameover&&Input.GetKeyDown(KeyCode.Escape))
         {
             if (panel.activeInHierarchy)
                 ResumeGame();
