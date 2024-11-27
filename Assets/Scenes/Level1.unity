@@ -1408,14 +1408,14 @@ MonoBehaviour:
   SpawningBalls: {fileID: 81176550328327808, guid: 69afcbfce9fbb494a8378aa46cc6d6b9, type: 3}
   ExistingBalls: []
   SpawnedObjects: {fileID: 288101193}
-  MaxBallCount: 3
-  SpawnPointOffsetH: 10.12
-  minVyOffset: 0
-  maxVyOffset: 7
-  vxRange: 4.68
-  SpawnCD: 0.22
+  MaxBallCount: 5
+  SpawnPointOffsetH: 7.52
+  minVyOffset: 3
+  maxVyOffset: 8
+  vxRange: 3
+  SpawnCD: 0.5
   minGravity: 0
-  maxGravity: 0
+  maxGravity: 0.05
 --- !u!1 &1023424602
 GameObject:
   m_ObjectHideFlags: 0
