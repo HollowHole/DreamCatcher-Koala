@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6218051334409202133}
   m_Layer: 0
   m_Name: IceBall
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,6 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disappearDistance: 20
+  HostileImage: {fileID: 0}
+  FriendlyImage: {fileID: 0}
 --- !u!95 &6218051334409202133
 Animator:
   serializedVersion: 5

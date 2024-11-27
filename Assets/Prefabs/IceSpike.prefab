@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 320428506304572261}
   m_Layer: 0
   m_Name: IceSpike
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disappearDistance: 20
+  HostileImage: {fileID: 0}
+  FriendlyImage: {fileID: 0}
 --- !u!50 &320428506304572261
 Rigidbody2D:
   serializedVersion: 4

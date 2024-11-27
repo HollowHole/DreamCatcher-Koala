@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fireballs : MonoBehaviour
 {
@@ -10,11 +13,16 @@ public class Fireballs : MonoBehaviour
     CircleCollider2D mCollider;
     PlayerController Player;
     BallSpawner ballSpawner;
+    Animator animator;
 
     public float disappearDistance = 20f;
     
     private Vector2 Gravity;
-
+    SpriteRenderer mImg;
+    [SerializeField] Sprite HostileImage;
+    [SerializeField] Sprite FriendlyImage;
+    [SerializeField] AnimatorController HostileAnimCrl;
+    [SerializeField] AnimatorController FriendlyAnimCrl;
     private bool isHostile;
     public bool Friendly
     {
@@ -25,13 +33,26 @@ public class Fireballs : MonoBehaviour
         set
         {
             isHostile = !value;
+            if (value)
+            {
+                mImg.sprite = FriendlyImage;
+                animator.runtimeAnimatorController = FriendlyAnimCrl;
+            }
+            else
+            {
+                mImg.sprite = HostileImage;
+                animator.runtimeAnimatorController = HostileAnimCrl;
+            }
         }
     }
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         mCollider = GetComponent<CircleCollider2D>();
+        mImg = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();    
         isHostile = true;
+
     }
     private void Start()
     {
@@ -73,9 +94,17 @@ public class Fireballs : MonoBehaviour
     {
         Gravity = new Vector2(0,-gravity);
     }
+    public void SetVelocity(Vector2 velocity)
+    {
+        rb.velocity = velocity;
+    }
+    public Vector2 GetVelocity()
+    {
+        return rb.velocity;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (isHostile&&other.CompareTag("Player"))
         {
             Destroy(gameObject);
             other.GetComponent<PlayerController>().Hp--;

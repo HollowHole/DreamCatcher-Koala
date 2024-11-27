@@ -65,7 +65,7 @@ public class BallSpawner : MonoBehaviour
         //Set Velocity
         float vyOffset = Random.Range(minVyOffset, maxVyOffset);
         float vxOffset = Random.Range(-vxRange, vxRange);
-        go.GetComponent<Rigidbody2D>().velocity = new Vector2(vxOffset, vyOffset);
+        go.SetVelocity(new Vector2(vxOffset, vyOffset));
         //Set Gravity
         go.SetGravity(Random.Range(minGravity, maxGravity));
         //Add to list
