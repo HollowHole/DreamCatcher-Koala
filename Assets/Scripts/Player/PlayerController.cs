@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
-        camController = Camera.main.GetComponent<CameraController>();
+        // camController = Camera.main.GetComponent<CameraController>();
         
     }
     private void Update()

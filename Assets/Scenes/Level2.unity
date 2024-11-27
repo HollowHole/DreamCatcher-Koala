@@ -540,7 +540,7 @@ MonoBehaviour:
   HorizontalSpeed: 8
   hp: 3
   HorSpeedScalar: 1
-  camController: {fileID: 0}
+  camController: {fileID: 643369671}
   CamFollowStart: {fileID: 1002511297}
   CamFollowEnd: {fileID: 1444427639}
 --- !u!50 &168300009
@@ -3512,7 +3512,7 @@ Transform:
   m_GameObject: {fileID: 1444427638}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -429.2, z: 0}
+  m_LocalPosition: {x: -0, y: -424.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
