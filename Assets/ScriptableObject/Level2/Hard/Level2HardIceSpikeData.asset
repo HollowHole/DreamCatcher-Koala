@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86a4005809a50e3458a63ab871e5fdab, type: 3}
-  m_Name: SpawnerData
+  m_Name: Level2HardIceSpikeData
   m_EditorClassIdentifier: 
-  MaxBallCount: 5
-  SpawnPointOffsetH: 0
-  minVyOffset: 0
-  maxVyOffset: 0
+  MaxBallCount: 8
+  SpawnPointOffsetH: 8
+  minVyOffset: 0.2
+  maxVyOffset: 1.2
   vxRange: 0
-  SpawnCD: 2
+  SpawnCD: 0.4
   minGravity: 0
-  maxGravity: 0
+  maxGravity: -0.03

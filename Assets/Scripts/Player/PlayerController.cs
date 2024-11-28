@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
         
         HandleInput();
 
-        HandleCounter();
+        
 
         HandleCameraFollowLogic();
 
@@ -114,6 +114,8 @@ public class PlayerController : MonoBehaviour
         HandleStatusDisplay();
 
         buffManager.HandleBuffEffect();
+
+        HandleCounter();
     }
     public void ChangeSpeedHor(float scalar)
     {

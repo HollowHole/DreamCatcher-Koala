@@ -9,16 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8a422cbda9ef1b40baf94f0b890f240, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: 86a4005809a50e3458a63ab871e5fdab, type: 3}
+  m_Name: Level1HardFireBallData
   m_EditorClassIdentifier: 
-  CounterRadius: 5
-  CounterLastTime: 0.5
-  InvincibalTime: 3
-  CounterCD: 1
-  FallingSpeedInit: 8
-  HorizontalSpeed: 8
-  VerticalSpeed: 0.5
-  MaxFallSpeed: 10
-  MinFallSpeed: 4
-  hpInit: 5
+  MaxBallCount: 10
+  SpawnPointOffsetH: 8
+  minVyOffset: 4
+  maxVyOffset: 9
+  vxRange: 6
+  SpawnCD: 0.4
+  minGravity: 0
+  maxGravity: 0.08

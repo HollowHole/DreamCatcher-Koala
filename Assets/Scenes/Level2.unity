@@ -538,7 +538,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48537b312f49bb147bb8108e679b021e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: c4b96d1c2466b0d4ab5f212424c94352, type: 2}
+  playerDataEasy: {fileID: 11400000, guid: 32eb928936f56b046b36f00726883e3e, type: 2}
+  playerDataHard: {fileID: 11400000, guid: 842517d34d2aa3d4a83a070d1f25cc4c, type: 2}
   camController: {fileID: 643369671}
   CamFollowStart: {fileID: 1002511297}
   CamFollowEnd: {fileID: 1444427639}
@@ -1096,14 +1097,8 @@ MonoBehaviour:
   SpawningBalls: {fileID: 81176550328327808, guid: 2b46f6753cc50454a9f3a022a3a356b7, type: 3}
   ExistingBalls: []
   SpawnedObjects: {fileID: 683104922}
-  MaxBallCount: 5
-  SpawnPointOffsetH: 8
-  minVyOffset: 3
-  maxVyOffset: 8
-  vxRange: 3
-  SpawnCD: 0.5
-  minGravity: 0
-  maxGravity: 0.05
+  spawnerDataEasy: {fileID: 11400000, guid: 4725418cf81894d42b85f7a5b54fe452, type: 2}
+  spawnerDataHard: {fileID: 11400000, guid: 69b6c0fd092beb94f80d95cc7220b87b, type: 2}
 --- !u!1 &373999852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,14 +1821,8 @@ MonoBehaviour:
   SpawningBalls: {fileID: 3624805029777152464, guid: f709829b4e6f59a47811ffde6478008c, type: 3}
   ExistingBalls: []
   SpawnedObjects: {fileID: 683104922}
-  MaxBallCount: 4
-  SpawnPointOffsetH: 9
-  minVyOffset: 0
-  maxVyOffset: 1
-  vxRange: 0
-  SpawnCD: 1
-  minGravity: -0.05
-  maxGravity: 0
+  spawnerDataEasy: {fileID: 11400000, guid: b7fcdd98ddb968b4b92d13655f8a0ffb, type: 2}
+  spawnerDataHard: {fileID: 11400000, guid: ef295e107e601b643a5d1d9650d9fc2e, type: 2}
 --- !u!1 &942895980
 GameObject:
   m_ObjectHideFlags: 0
