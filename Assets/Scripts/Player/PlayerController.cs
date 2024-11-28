@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (collider.CompareTag("Ball"))
                 {
-                    Fireballs fb = collider.GetComponent<Fireballs>();
+                    Ball fb = collider.GetComponent<Ball>();
                     if (!fb.Friendly)
                     {
                         fb.Friendly = true;

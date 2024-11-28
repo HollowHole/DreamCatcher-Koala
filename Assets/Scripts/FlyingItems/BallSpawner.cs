@@ -8,7 +8,7 @@ public class BallSpawner : MonoBehaviour
     public GameObject SpawningBalls;
 
     [Tooltip("场景中存在的对象")]
-    [SerializeField]List<Fireballs> ExistingBalls;
+    [SerializeField]List<Ball> ExistingBalls;
 
     [Tooltip("生成物体挂在该对象下")]
     public Transform SpawnedObjects;
@@ -56,7 +56,7 @@ public class BallSpawner : MonoBehaviour
 
     private void DoSpawn()
     {
-        Fireballs go = Instantiate(SpawningBalls, SpawnedObjects).GetComponent<Fireballs>();
+        Ball go = Instantiate(SpawningBalls, SpawnedObjects).GetComponent<Ball>();
 
         go.SetSpawner(this);
         //SpawnOffset
@@ -74,7 +74,7 @@ public class BallSpawner : MonoBehaviour
         SpawnTimer = SpawnCD;
     }
 
-    public void OnBallExit(Fireballs balls)
+    public void OnBallExit(Ball balls)
     {
         ExistingBalls.Remove(balls);
     }

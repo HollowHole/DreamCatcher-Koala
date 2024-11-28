@@ -163,10 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disappearDistance: 20
-  HostileImage: {fileID: -988286568, guid: 150ddcb7c6560e947934b1b84a3c421c, type: 3}
-  FriendlyImage: {fileID: -88878745, guid: b5c5d6fd60d037949a7f98abde87aa1b, type: 3}
-  HostileAnimCrl: {fileID: 9100000, guid: 75454891f8acc3b4cad35e9461a18ee1, type: 2}
-  FriendlyAnimCrl: {fileID: 9100000, guid: 650588376eee22e479dd2d53c6b09a7a, type: 2}
+  hostileColor: {r: 0, g: 0, b: 0, a: 0}
+  friendlyColor: {r: 0.9528302, g: 0.39910996, b: 0.39910996, a: 1}
 --- !u!95 &6218051334409202133
 Animator:
   serializedVersion: 5

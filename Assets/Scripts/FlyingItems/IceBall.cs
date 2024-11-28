@@ -2,16 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceBall : Fireballs
+public class IceBall : Ball
 {
-    
-    private void OnTriggerEnter2D(Collider2D other)
+    [SerializeField] Color hostileColor;
+    [SerializeField]Color friendlyColor;
+
+    protected override void HitPlayer(PlayerController player)
     {
-        if (other.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-            other.GetComponent<BuffManager>().AddBuff(new Buff(Buff.BuffName.Decelerate, 3f));
-        }
+        Destroy(gameObject);
+        player.GetComponent<BuffManager>().AddBuff(new Buff(Buff.BuffName.Decelerate, 3f));
     }
     
+    // Start is called before the first frame update
+    public override void UpdateView()
+    {
+        if (isHostile)
+        {
+            mImg.color = hostileColor;
+        }
+        else
+        {
+            mImg.color = friendlyColor;
+        }
+    }
+
 }
