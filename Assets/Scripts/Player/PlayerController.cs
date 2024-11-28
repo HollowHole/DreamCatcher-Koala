@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
 
-    [SerializeField] PlayerData playerData;
+    [SerializeField] PlayerData playerDataEasy;
+    [SerializeField] PlayerData playerDataHard;
+    PlayerData playerData;
     
     [SerializeField] CameraController camController;
     [SerializeField] public Transform CamFollowStart;
@@ -69,6 +71,8 @@ public class PlayerController : MonoBehaviour
         invincibalTimer = 0;
         //Reset Falling Speed
         curFallingSpeed = playerData.FallingSpeedInit;
+        //getSO
+        playerData = (playerDataHard != null && DifficultySetting.HardMode) ? playerDataHard:playerDataEasy;
 
         if (Instance!=null)
         {

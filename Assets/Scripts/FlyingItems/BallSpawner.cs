@@ -13,28 +13,16 @@ public class BallSpawner : MonoBehaviour
     [Tooltip("生成物体挂在该对象下")]
     public Transform SpawnedObjects;
 
-    [Tooltip("场景中该对象最大存在数量")]
-    public int MaxBallCount = 5;
-    [Tooltip("生成位置的左右最大偏移量")]
-    public float SpawnPointOffsetH;
-    [Tooltip("生成时最小y轴速度")]
-    public float minVyOffset;
-    [Tooltip("生成时最大y轴速度")]
-    public float maxVyOffset;
-    [Tooltip("生成时最大x轴速度")]
-    public float vxRange;
-
-    [Tooltip("最小生成间隔")]
-    public float SpawnCD = 2f;
+    [SerializeField]SpawnerData spawnerDataEasy;
+    [SerializeField]SpawnerData spawnerDataHard;
+    SpawnerData spawnerData;
     private float SpawnTimer = 0;
-    [Tooltip("生成物体受到的最小重力")]
-    public float minGravity;
-    [Tooltip("生成物体受到的最大重力")]
-    public float maxGravity;
+    
 
     private void Awake()
     {
-        
+        //getSO
+        spawnerData = (spawnerDataHard != null && DifficultySetting.HardMode) ? spawnerDataHard : spawnerDataEasy;
     }
     private void Start()
     {
@@ -47,7 +35,7 @@ public class BallSpawner : MonoBehaviour
             SpawnTimer -= Time.deltaTime;
             return;
         }
-        if (ExistingBalls.Count < MaxBallCount)
+        if (ExistingBalls.Count < spawnerData.MaxBallCount)
         {
             DoSpawn();
         }
@@ -59,18 +47,18 @@ public class BallSpawner : MonoBehaviour
 
         go.SetSpawner(this);
         //SpawnOffset
-        float SpawnOffset = Random.Range(-SpawnPointOffsetH,SpawnPointOffsetH);
+        float SpawnOffset = Random.Range(-spawnerData.SpawnPointOffsetH, spawnerData.SpawnPointOffsetH);
         go.transform.position = transform.position + new Vector3(SpawnOffset, 0, 0);
         //Set Velocity
-        float vyOffset = Random.Range(minVyOffset, maxVyOffset);
-        float vxOffset = Random.Range(-vxRange, vxRange);
+        float vyOffset = Random.Range(spawnerData.minVyOffset, spawnerData.maxVyOffset);
+        float vxOffset = Random.Range(-spawnerData.vxRange, spawnerData.vxRange);
         go.SetVelocity(new Vector2(vxOffset, vyOffset));
         //Set Gravity
-        go.SetGravity(Random.Range(minGravity, maxGravity));
+        go.SetGravity(Random.Range(spawnerData.minGravity, spawnerData.maxGravity));
         //Add to list
         ExistingBalls.Add(go);
         //reset CD
-        SpawnTimer = SpawnCD;
+        SpawnTimer = spawnerData.SpawnCD;
     }
 
     public void OnBallExit(Ball balls)
