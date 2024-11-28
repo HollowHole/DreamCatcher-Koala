@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -192,11 +192,15 @@ public class PlayerController : MonoBehaviour
                         
                         b.GetCountered(transform);
                         //开启无敌时间 begin invincibal
-                        invincibalTimer = playerData.InvincibalTime;
+                        SetInvincibal(playerData.InvincibalTime);
                     }
                 }
             }
         }
+    }
+    public void SetInvincibal(float LastTime)
+    {
+        invincibalTimer = LastTime;
     }
 
     private void HandleCheatOpe()

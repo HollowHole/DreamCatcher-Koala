@@ -9,6 +9,9 @@ public class PlayerExitZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            //给玩家开无敌
+            collision.GetComponent<PlayerController>().SetInvincibal(TransitionAnim.TransitionLastTime);
+
             FindObjectOfType<TransitionAnim>().PlayExitAnimAndSwitchScene();
         }
 
