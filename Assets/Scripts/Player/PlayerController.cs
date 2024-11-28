@@ -69,10 +69,11 @@ public class PlayerController : MonoBehaviour
         CounterCDTimer = 0;
         CounterLastTimer = 0;
         invincibalTimer = 0;
-        //Reset Falling Speed
-        curFallingSpeed = playerData.FallingSpeedInit;
+        
         //getSO
         playerData = (playerDataHard != null && DifficultySetting.HardMode) ? playerDataHard:playerDataEasy;
+        //Reset Falling Speed
+        curFallingSpeed = playerData.FallingSpeedInit;
 
         if (Instance!=null)
         {
