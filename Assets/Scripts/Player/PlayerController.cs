@@ -7,30 +7,36 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
 
+    [SerializeField] PlayerData playerData;
+    
+    [SerializeField] CameraController camController;
+    [SerializeField] public Transform CamFollowStart;
+    [SerializeField] public Transform CamFollowEnd;
+
+    [SerializeField] SpriteRenderer invincibalCircal;
+    [SerializeField] SpriteRenderer CounterCircal;
+
+    Rigidbody2D rb;
+    private BuffManager buffManager;
+
+    float curFallingSpeed;
+    float HorSpeedScalar = 1.0f;
+
     float inputHorizontal;
+    float inputVertical;
     bool inputCounter;
-    [Tooltip("弹反半径")]
-    [SerializeField] float CounterRadius = 5f;
-    [Tooltip("弹反时长")]
-    [SerializeField] float CounterLastTime = 0.5f;
-    [Tooltip("无敌时长")]
-    [SerializeField] float InvincibalTime = 3f;
-    [Tooltip("弹反CD")]
-    [SerializeField] float CounterCD = 1f;
+
+    bool isCountering => CounterLastTimer > 0;
+    bool isCounterCoolDown => CounterCDTimer <= 0;
+    bool isInvincibal => invincibalTimer > 0;
+    bool isFrozen => HorSpeedScalar == 0;
 
     float CounterCDTimer;
     float invincibalTimer;
     float CounterLastTimer;
-    bool isCountering => CounterLastTimer > 0;
-    bool isCounterCoolDown => CounterCDTimer <= 0;
-    bool isInvincibal => invincibalTimer > 0;
-    
 
-    Rigidbody2D rb;
-    public float FallingSpeed = 8f;
-    public float HorizontalSpeed = 2f;
+    static private int hp ;
     public Action<int> HpChange;
-    
     public int Hp {
         get
         {
@@ -51,17 +57,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    [SerializeField]private int hp;
-    float HorSpeedScalar = 1.0f;
-
-    private BuffManager buffManager;
-
-    [SerializeField]CameraController camController;
-    public Transform CamFollowStart;
-    public Transform CamFollowEnd;
-
-    [SerializeField] SpriteRenderer invincibalCircal;
-    [SerializeField] SpriteRenderer CounterCircal;
+    
 
     private void Awake()
     {
@@ -71,11 +67,17 @@ public class PlayerController : MonoBehaviour
         CounterCDTimer = 0;
         CounterLastTimer = 0;
         invincibalTimer = 0;
-
-        
+        //Reset Falling Speed
+        curFallingSpeed = playerData.FallingSpeedInit;
 
         if (Instance!=null)
+        {
             Destroy(Instance);
+        }
+        else
+        {
+            hp = playerData.hpInit;
+        }
         Instance = this;
     }
     private void Start()
@@ -93,7 +95,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        //Reset Speed
+        //Reset Horizontal Speed
         HorSpeedScalar = 1f;
         
         HandleInput();
@@ -130,7 +132,7 @@ public class PlayerController : MonoBehaviour
         }
         //Counter
         targetColor = CounterCircal.color;
-        targetColor.a = CounterLastTimer / CounterLastTime;
+        targetColor.a = CounterLastTimer / playerData.CounterLastTime;
         CounterCircal.color = targetColor;
 
     }
@@ -155,13 +157,13 @@ public class PlayerController : MonoBehaviour
 
     private void HandleCounter()
     {
-        if (inputCounter && isCounterCoolDown)
+        if (!isFrozen && inputCounter && isCounterCoolDown)
         {
             //设置显示counter圈大小
-            CounterCircal.transform.localScale = new Vector3(CounterRadius, CounterRadius, CounterRadius);
+            CounterCircal.transform.localScale = new Vector3(playerData.CounterRadius, playerData.CounterRadius, playerData.CounterRadius);
 
-            CounterLastTimer = CounterLastTime;
-            CounterCDTimer = CounterCD;
+            CounterLastTimer = playerData.CounterLastTime;
+            CounterCDTimer = playerData.CounterCD;
         }
         else if (inputCounter)
         {
@@ -172,18 +174,18 @@ public class PlayerController : MonoBehaviour
         if (isCountering)
         {
             Vector2 Pos = new Vector2(transform.position.x, transform.position.y);
-            Collider2D[] collider2D = Physics2D.OverlapCircleAll(Pos, CounterRadius);
+            Collider2D[] collider2D = Physics2D.OverlapCircleAll(Pos, playerData.CounterRadius);
             foreach (Collider2D collider in collider2D)
             {
                 if (collider.CompareTag("Ball"))
                 {
-                    Ball fb = collider.GetComponent<Ball>();
-                    if (!fb.Friendly)
+                    Ball b = collider.GetComponent<Ball>();
+                    if (!b.Friendly)
                     {
-                        fb.Friendly = true;
-                        fb.SetVelocity(-fb.GetVelocity());
+                        
+                        b.GetCountered(transform);
                         //开启无敌时间 begin invincibal
-                        invincibalTimer = InvincibalTime;
+                        invincibalTimer = playerData.InvincibalTime;
                     }
                 }
             }
@@ -209,12 +211,18 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        rb.velocity = new Vector2(inputHorizontal * HorizontalSpeed * HorSpeedScalar, -FallingSpeed);
+        curFallingSpeed -= inputVertical * playerData.VerticalSpeed * Time.deltaTime;
+        curFallingSpeed = Math.Clamp(curFallingSpeed, playerData.MinFallSpeed, playerData.MaxFallSpeed);
+
+        float curHorSpeed = inputHorizontal * playerData.HorizontalSpeed * HorSpeedScalar;
+
+        rb.velocity = new Vector2( curHorSpeed, -curFallingSpeed);
     } 
     
     private void HandleInput()
     {
         inputHorizontal = Input.GetAxis("Horizontal");
+        inputVertical = Input.GetAxis("Vertical");
         inputCounter = Input.GetKeyDown(KeyCode.Space);
     }
 

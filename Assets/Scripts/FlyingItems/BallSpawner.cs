@@ -24,7 +24,6 @@ public class BallSpawner : MonoBehaviour
     [Tooltip("生成时最大x轴速度")]
     public float vxRange;
 
-    private float PlayerFallingSpeed;
     [Tooltip("最小生成间隔")]
     public float SpawnCD = 2f;
     private float SpawnTimer = 0;
@@ -39,7 +38,7 @@ public class BallSpawner : MonoBehaviour
     }
     private void Start()
     {
-        PlayerFallingSpeed = PlayerController.Instance.FallingSpeed;
+       
     }
     private void Update()
     {

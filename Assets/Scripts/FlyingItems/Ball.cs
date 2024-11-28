@@ -12,7 +12,7 @@ public abstract class Ball : MonoBehaviour
 
     public float disappearDistance = 20f;
 
-    private Vector2 Gravity;
+    protected Vector2 Gravity;
     protected SpriteRenderer mImg;
     protected Animator animator;
 
@@ -79,6 +79,10 @@ public abstract class Ball : MonoBehaviour
     {
         Gravity = new Vector2(0, -gravity);
     }
+    public void SetGravity(Vector2 gravity)
+    {
+        Gravity = gravity;
+    }
     public void SetVelocity(Vector2 velocity)
     {
         rb.velocity = velocity;
@@ -106,6 +110,11 @@ public abstract class Ball : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    public virtual void GetCountered(Transform playerTrans )
+    {
+        Friendly = true;
+        rb.velocity = -rb.velocity;
     }
     protected virtual void HitPlayer(PlayerController player)
     {

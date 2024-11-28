@@ -1800,13 +1800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48537b312f49bb147bb8108e679b021e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CounterRadius: 3.5
-  CounterLastTime: 0.5
-  InvincibalTime: 1.5
-  CounterCD: 2
-  FallingSpeed: 7.5
-  HorizontalSpeed: 8
-  hp: 5
+  playerData: {fileID: 11400000, guid: c4b96d1c2466b0d4ab5f212424c94352, type: 2}
   camController: {fileID: 519420033}
   CamFollowStart: {fileID: 1781265936}
   CamFollowEnd: {fileID: 1506912510}
