@@ -1,23 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "SpawnerData", menuName = "ScriptableObject/Éú³ÉÆ÷Êı¾İ", order = 0)]
+[CreateAssetMenu(fileName = "SpawnerData", menuName = "ScriptableObject/ç”Ÿæˆå™¨æ•°æ®", order = 0)]
 public class SpawnerData : ScriptableObject
 {
-    [Tooltip("³¡¾°ÖĞ¸Ã¶ÔÏó×î´ó´æÔÚÊıÁ¿")]
+    [Tooltip("åœºæ™¯ä¸­è¯¥å¯¹è±¡æœ€å¤§å­˜åœ¨æ•°é‡")]
     public int MaxBallCount = 5;
-    [Tooltip("Éú³ÉÎ»ÖÃµÄ×óÓÒ×î´óÆ«ÒÆÁ¿")]
+    [Tooltip("ç”Ÿæˆä½ç½®çš„å·¦å³æœ€å¤§åç§»é‡")]
     public float SpawnPointOffsetH;
-    [Tooltip("Éú³ÉÊ±×îĞ¡yÖáËÙ¶È")]
+    [Tooltip("ç”Ÿæˆæ—¶æœ€å°yè½´é€Ÿåº¦")]
     public float minVyOffset;
-    [Tooltip("Éú³ÉÊ±×î´óyÖáËÙ¶È")]
+    [Tooltip("ç”Ÿæˆæ—¶æœ€å¤§yè½´é€Ÿåº¦")]
     public float maxVyOffset;
-    [Tooltip("Éú³ÉÊ±×î´óxÖáËÙ¶È")]
+    [Tooltip("ç”Ÿæˆæ—¶æœ€å¤§xè½´é€Ÿåº¦")]
     public float vxRange;
-    [Tooltip("×îĞ¡Éú³É¼ä¸ô")]
+    [Tooltip("æœ€å°ç”Ÿæˆé—´éš”")]
     public float SpawnCD = 2f;
-    [Tooltip("Éú³ÉÎïÌåÊÜµ½µÄ×îĞ¡ÖØÁ¦")]
+    [Tooltip("ç”Ÿæˆç‰©ä½“å—åˆ°çš„æœ€å°é‡åŠ›")]
     public float minGravity;
-    [Tooltip("Éú³ÉÎïÌåÊÜµ½µÄ×î´óÖØÁ¦")]
+    [Tooltip("ç”Ÿæˆç‰©ä½“å—åˆ°çš„æœ€å¤§é‡åŠ›")]
     public float maxGravity;
 }
