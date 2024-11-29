@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1096,7 +1097,7 @@ MonoBehaviour:
   SpawningBalls: {fileID: 411369040201634844, guid: c8a3b0aef21a3ec489f8226aecd08086, type: 3}
   ExistingBalls: []
   SpawnedObjects: {fileID: 683104922}
-  spawnerDataEasy: {fileID: 11400000, guid: 4725418cf81894d42b85f7a5b54fe452, type: 2}
+  spawnerDataEasy: {fileID: 11400000, guid: b03c1d66c3a806b42b29d3d34a0b67d4, type: 2}
   spawnerDataHard: {fileID: 11400000, guid: 69b6c0fd092beb94f80d95cc7220b87b, type: 2}
 --- !u!1 &373999852
 GameObject:
