@@ -105,6 +105,7 @@ MonoBehaviour:
   FriendlyImage: {fileID: -988286568, guid: 150ddcb7c6560e947934b1b84a3c421c, type: 3}
   HostileAnimCrl: {fileID: 9100000, guid: 650588376eee22e479dd2d53c6b09a7a, type: 2}
   FriendlyAnimCrl: {fileID: 9100000, guid: 75454891f8acc3b4cad35e9461a18ee1, type: 2}
+  explodeSoundClip: {fileID: 8300000, guid: 5919012e3abae3f43bc2d8cf67c61ef0, type: 3}
 --- !u!58 &7143575811531200053
 CircleCollider2D:
   m_ObjectHideFlags: 0

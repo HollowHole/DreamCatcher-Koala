@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -12,6 +12,7 @@ public class Fireballs : Ball
     [SerializeField] Sprite FriendlyImage;
     [SerializeField] RuntimeAnimatorController HostileAnimCrl;
     [SerializeField] RuntimeAnimatorController FriendlyAnimCrl;
+    [SerializeField] AudioClip explodeSoundClip;
     public override void UpdateView()
     {
         if (isHostile)
@@ -24,5 +25,15 @@ public class Fireballs : Ball
             mImg.sprite = FriendlyImage;
             animator.runtimeAnimatorController = FriendlyAnimCrl;
         }
+    }
+    new private void OnDestroy()
+    {
+        base.OnDestroy();
+        if (explodeSoundClip != null)
+        {
+            if(BGMPlay.instance != null)
+            BGMPlay.instance.PlayMusic(explodeSoundClip);
+        }
+        
     }
 }
