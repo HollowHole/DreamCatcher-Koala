@@ -39,6 +39,9 @@ public class PlayerController : MonoBehaviour
 
     static private int hp ;
     public Action<int> HpChange;
+
+    private int cheatFlag=1;
+
     public int Hp {
         get
         {
@@ -48,6 +51,8 @@ public class PlayerController : MonoBehaviour
         {
             if (isInvincibal)
                 return;
+
+            if(cheatFlag>0) return;
 
             hp = value;
             if(hp == 0)
@@ -208,7 +213,8 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.C))
         {
-            Hp++;
+            // Hp++;
+            cheatFlag*=-1;
         }
     }
 

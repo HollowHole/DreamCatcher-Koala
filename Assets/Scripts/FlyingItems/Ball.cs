@@ -29,7 +29,7 @@ public abstract class Ball : MonoBehaviour
             UpdateView();
         }
     }
-    void Awake()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         mCollider = GetComponent<CircleCollider2D>();
@@ -120,8 +120,8 @@ public abstract class Ball : MonoBehaviour
     {
         player.Hp--;
     }
-    private void OnDestroy()
+    protected void OnDestroy()
     {
-        ballSpawner.OnBallExit(this);
+        ballSpawner?.OnBallExit(this);
     }
 }
