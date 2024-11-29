@@ -17,6 +17,6 @@ MonoBehaviour:
   minVyOffset: 1
   maxVyOffset: 10
   vxRange: 100
-  SpawnCD: 0.1
+  SpawnCD: 1
   minGravity: 0
   maxGravity: 0.01
