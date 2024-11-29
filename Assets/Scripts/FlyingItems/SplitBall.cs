@@ -14,7 +14,7 @@ public class SplitBall : Ball
     [SerializeField] RuntimeAnimatorController FriendlyAnimCrl;
 
     public GameObject SpiltBallPre;
-    public int childNum=3;
+    public int childNum=2;
 
     static List<GameObject> BallList;
 
@@ -42,27 +42,45 @@ public class SplitBall : Ball
 
     public void Spiliting(){
         Transform trans=this.transform; 
+        Vector3 oriV=rb.velocity;
 
-        Vector3 scaleGlobal=trans.lossyScale;
-        Vector3 scaleLocal=trans.localScale;
+        Debug.Log(oriV);
 
-        if(scaleGlobal.x< 0.5f) return;
-        scaleLocal/=2f;
-        // trans.localScale=scaleLocal;
+        Vector3 scaleGlob=trans.lossyScale;
+        Vector3 scaleLoc=trans.localScale;
+
+        if(scaleGlob.x< 0.2f){
+            Destroy(this.gameObject);
+            return;
+        }
+        scaleLoc/=2f;
+
+
+
+        List<GameObject> smaller=new List<GameObject>();
 
         for(int i=0;i<childNum;i++){
-            Debug.Log(i+":child");
+            // Debug.Log(i+":child");
             GameObject child=Instantiate(SpiltBallPre) as GameObject;
+            smaller.Add(child);
+        }
+        
+        smaller.Add(this.gameObject);
+        foreach(GameObject child in smaller){
             child.transform.position=trans.position;
-            child.transform.localScale=scaleLocal;
+            child.transform.localScale=scaleLoc;
             child.transform.parent=GameObject.Find("ChildBalls").transform;
             child.tag="ChildBall";
-            BallList.Add(child);
+            Vector3 changeV=new Vector3(UnityEngine.Random.Range(1f, 2f)*(-oriV.x/(Math.Abs(oriV.x)+0.001f))*2f, UnityEngine.Random.Range(0f, 0.5f), 0f);
+            child.GetComponent<Rigidbody2D>().velocity=(oriV+changeV);
         }
 
-
-        // Destroy(this.gameObject);
     }
+
+    public void SetGravity(float gravity){}
+
+    public void SetGravity(Vector2 gravity){}
+
 
 
 }

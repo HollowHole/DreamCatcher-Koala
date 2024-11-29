@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxBallCount: 10
   SpawnPointOffsetH: 2
-  minVyOffset: 1
-  maxVyOffset: 10
+  minVyOffset: -10
+  maxVyOffset: -1
   vxRange: 100
   SpawnCD: 1
   minGravity: 0

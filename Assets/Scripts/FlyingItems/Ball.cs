@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Ball : MonoBehaviour
 {
-    Rigidbody2D rb;
+    protected Rigidbody2D rb;
     CircleCollider2D mCollider;
     PlayerController Player;
     BallSpawner ballSpawner;
