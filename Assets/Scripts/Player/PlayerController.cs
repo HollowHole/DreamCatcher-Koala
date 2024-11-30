@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
         if (!isFrozen && inputCounter && isCounterCoolDown)
         {
             //设置显示counter圈大小
-            CounterCircal.transform.localScale = new Vector3(playerData.CounterRadius, playerData.CounterRadius, playerData.CounterRadius);
+            CounterCircal.transform.localScale = new Vector3(playerData.CounterRadius, playerData.CounterRadius, playerData.CounterRadius) * 0.35f;
 
             CounterLastTimer = playerData.CounterLastTime;
             CounterCDTimer = playerData.CounterCD;
