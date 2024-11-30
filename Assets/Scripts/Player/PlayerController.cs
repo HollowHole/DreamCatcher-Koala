@@ -39,8 +39,8 @@ public class PlayerController : MonoBehaviour
 
     static private int hp ;
     public Action<int> HpChange;
-
-    private int cheatFlag=1;
+    //-1:off 1:on
+    private int cheatFlag=-1;
 
     public int Hp {
         get
