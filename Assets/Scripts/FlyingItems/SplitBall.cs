@@ -12,9 +12,12 @@ public class SplitBall : Ball
     [SerializeField] Color friendlyColor;
 
     public GameObject SpiltBallPre;
-    public int childNum = 2;
+    public int childNum;
+    public float minSize;
 
     static List<GameObject> BallList;
+
+    // protected bool hitBallFlag=false;
 
     protected override void Awake()
     {
@@ -24,6 +27,10 @@ public class SplitBall : Ball
         }
         base.Awake();
         BallList.Add(this.gameObject);
+
+        childNum=2;
+        minSize=0.1f;
+        hitBallFlag=false;
     }
     public override void UpdateView()
     {
@@ -47,7 +54,7 @@ public class SplitBall : Ball
         Vector3 scaleGlob = trans.lossyScale;
         Vector3 scaleLoc = trans.localScale;
 
-        if (scaleGlob.x < 0.2f)
+        if (scaleGlob.x < minSize)
         {
             Destroy(this.gameObject);
             return;

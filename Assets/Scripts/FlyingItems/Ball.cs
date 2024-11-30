@@ -17,6 +17,9 @@ public abstract class Ball : MonoBehaviour
     protected Animator animator;
 
     protected bool isHostile;
+
+    protected bool hitBallFlag;
+
     public bool Friendly
     {
         get
@@ -36,6 +39,7 @@ public abstract class Ball : MonoBehaviour
         mImg = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         isHostile = true;
+        hitBallFlag=true;
 
     }
     private void Start()
@@ -98,7 +102,7 @@ public abstract class Ball : MonoBehaviour
             Destroy(gameObject);
             HitPlayer(other.GetComponent<PlayerController>());
         }
-        else if (other.CompareTag("Wall"))
+        else if (hitBallFlag&&other.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }
