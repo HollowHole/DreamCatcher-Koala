@@ -166,14 +166,17 @@ public class PlayerController : MonoBehaviour
             CounterLastTimer -=Time.deltaTime;
         }
     }
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawSphere(transform.position, playerData.CounterRadius);
+    }
     private void HandleCounter()
     {
         if (!isFrozen && inputCounter && isCounterCoolDown)
         {
             //设置显示counter圈大小
-            CounterCircal.transform.localScale = new Vector3(playerData.CounterRadius, playerData.CounterRadius, playerData.CounterRadius) * 0.35f;
-
+            CounterCircal.transform.localScale = new Vector3(playerData.CounterRadius, playerData.CounterRadius, playerData.CounterRadius) * 0.26f;
+            
             CounterLastTimer = playerData.CounterLastTime;
             CounterCDTimer = playerData.CounterCD;
         }

@@ -26,6 +26,10 @@ public class Fireballs : Ball
             animator.runtimeAnimatorController = FriendlyAnimCrl;
         }
     }
+    //private void Update()
+    //{
+    //    base.Update();
+    //}
     new private void OnDestroy()
     {
         base.OnDestroy();

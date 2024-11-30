@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2.47, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.64, y: 1.5807999, z: 0.64}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disappearDistance: 20
-  SpeedWhenCountered: 0
+  SpeedWhenCountered: 5
   hostileColor: {r: 1, g: 1, b: 1, a: 0}
   friendlyColor: {r: 0.23921567, g: 0.28826582, b: 1, a: 1}
 --- !u!50 &320428506304572261

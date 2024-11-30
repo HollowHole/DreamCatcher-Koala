@@ -42,7 +42,8 @@ public abstract class Ball : MonoBehaviour
     {
         Player = PlayerController.Instance;
     }
-    protected virtual void Update()
+    //protected virtual void Update()
+    protected void Update()
     {
         if (Player == null)
         {
@@ -63,12 +64,14 @@ public abstract class Ball : MonoBehaviour
 
     protected virtual void HandleRotation()
     {
+        
         Vector3 origin = new Vector3(0, -1, 0);
         Vector3 v = rb.velocity;
         float angle = Vector3.Angle(origin, v);
         if (v.x < 0)
             angle = -angle;
         transform.rotation = Quaternion.Euler(0, 0, angle);
+
     }
 
     public void SetSpawner(BallSpawner bs)
