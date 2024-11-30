@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 11581396}
   - component: {fileID: 11581398}
   - component: {fileID: 11581397}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level3RightWall2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,7 +185,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1054,9 +1054,9 @@ GameObject:
   - component: {fileID: 334309396}
   - component: {fileID: 334309398}
   - component: {fileID: 334309397}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level3RightWall3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1105,7 +1105,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2158,9 +2158,9 @@ GameObject:
   - component: {fileID: 1149106108}
   - component: {fileID: 1149106110}
   - component: {fileID: 1149106109}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level3RightWall1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2209,7 +2209,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2677,9 +2677,9 @@ GameObject:
   - component: {fileID: 1150163385}
   - component: {fileID: 1150163386}
   - component: {fileID: 1150163387}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level3LeftWall3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2780,7 +2780,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3194,9 +3194,9 @@ GameObject:
   - component: {fileID: 1173655520}
   - component: {fileID: 1173655521}
   - component: {fileID: 1173655522}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level3LeftWall2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3297,7 +3297,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3956,9 +3956,9 @@ GameObject:
   - component: {fileID: 1488636550}
   - component: {fileID: 1488636551}
   - component: {fileID: 1488636552}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level3LeftWall4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4059,7 +4059,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4603,9 +4603,9 @@ GameObject:
   - component: {fileID: 1585240863}
   - component: {fileID: 1585240864}
   - component: {fileID: 1585240865}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level3LeftWall1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4706,7 +4706,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -5546,9 +5546,9 @@ GameObject:
   - component: {fileID: 1924786456}
   - component: {fileID: 1924786458}
   - component: {fileID: 1924786457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level3RightWall4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5597,7 +5597,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

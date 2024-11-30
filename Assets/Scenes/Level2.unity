@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 149856587}
   m_Layer: 0
   m_Name: Level2LeftWall2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 257802453}
   m_Layer: 0
   m_Name: Level2LeftWall1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1112,7 +1112,7 @@ GameObject:
   - component: {fileID: 373999854}
   m_Layer: 0
   m_Name: Level2RightWall2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1924,7 +1924,7 @@ GameObject:
   - component: {fileID: 977600575}
   m_Layer: 0
   m_Name: Level2RightWall1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2289,7 +2289,7 @@ GameObject:
   - component: {fileID: 1040389524}
   m_Layer: 0
   m_Name: Level2LeftWall3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2711,7 +2711,7 @@ GameObject:
   - component: {fileID: 1155833304}
   m_Layer: 0
   m_Name: Level2RightWall4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3127,7 +3127,7 @@ GameObject:
   - component: {fileID: 1267595527}
   m_Layer: 0
   m_Name: Level2RightWall3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4341,7 +4341,7 @@ GameObject:
   - component: {fileID: 1859779243}
   m_Layer: 0
   m_Name: Level2LeftWall4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
