@@ -228,6 +228,9 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
+        //int airForce;
+        //if(curFallingSpeed > playerData.FallingSpeedInit)
+
         curFallingSpeed -= inputVertical * playerData.VerticalSpeed * Time.deltaTime;
         curFallingSpeed = Math.Clamp(curFallingSpeed, playerData.MinFallSpeed, playerData.MaxFallSpeed);
 

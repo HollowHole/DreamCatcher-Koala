@@ -42,7 +42,7 @@ public abstract class Ball : MonoBehaviour
     {
         Player = PlayerController.Instance;
     }
-    private void Update()
+    protected virtual void Update()
     {
         if (Player == null)
         {

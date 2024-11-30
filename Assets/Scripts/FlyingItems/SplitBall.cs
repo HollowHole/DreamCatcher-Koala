@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -42,7 +42,7 @@ public class SplitBall : Ball
         Transform trans = this.transform;
         Vector3 oriV = rb.velocity;
 
-        Debug.Log(oriV);
+        //Debug.Log(oriV);
 
         Vector3 scaleGlob = trans.lossyScale;
         Vector3 scaleLoc = trans.localScale;

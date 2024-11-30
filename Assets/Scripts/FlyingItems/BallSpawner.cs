@@ -1,4 +1,4 @@
-﻿
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,27 +8,27 @@ public class BallSpawner : MonoBehaviour
     public GameObject SpawningBalls;
 
     [Tooltip("场景中存在的对象")]
-    [SerializeField]List<Ball> ExistingBalls;
+    [SerializeField]protected List<Ball> ExistingBalls;
 
     [Tooltip("生成物体挂在该对象下")]
     public Transform SpawnedObjects;
 
-    [SerializeField]SpawnerData spawnerDataEasy;
-    [SerializeField]SpawnerData spawnerDataHard;
-    SpawnerData spawnerData;
-    private float SpawnTimer = 0;
+    [SerializeField]protected SpawnerData spawnerDataEasy;
+    [SerializeField] protected SpawnerData spawnerDataHard;
+    protected SpawnerData spawnerData;
+    protected float SpawnTimer = 0;
     
 
-    private void Awake()
+    protected void Awake()
     {
         //getSO
         spawnerData = (spawnerDataHard != null && DifficultySetting.HardMode) ? spawnerDataHard : spawnerDataEasy;
     }
-    private void Start()
+    protected void Start()
     {
        
     }
-    private void Update()
+    protected void Update()
     {
         if(SpawnTimer > 0)
         {
@@ -41,7 +41,7 @@ public class BallSpawner : MonoBehaviour
         }
     }
 
-    private void DoSpawn()
+    protected virtual void DoSpawn()
     {
         Ball go = Instantiate(SpawningBalls, SpawnedObjects).GetComponent<Ball>();
 
