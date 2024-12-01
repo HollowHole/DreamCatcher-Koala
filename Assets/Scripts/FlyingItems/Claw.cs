@@ -14,6 +14,7 @@ public class Claw : Ball
     Direction m_direction;
     bool alerting;
     
+    public AudioClip appearSoundClip;
     public override void UpdateView()
     {
         //Do nothing
@@ -29,6 +30,12 @@ public class Claw : Ball
         if (alerting)
         {
             //显示黄色叹号
+            
+            if (appearSoundClip != null)
+            {
+                if (BGMPlay.instance != null)
+                    BGMPlay.instance.PlayMusic(appearSoundClip);
+            }
         }
     }
     public void SetDirection(Direction direction)
