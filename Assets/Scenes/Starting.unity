@@ -279,7 +279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &179154416
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1615,8 +1615,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -129, y: -119}
-  m_SizeDelta: {x: 1083, y: 547.6155}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1000, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623116601
 MonoBehaviour:
@@ -1638,7 +1638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u79FB\u52A8\uFF1AWASD \n\n\u5F39\u53CD\uFF1ASpace"
+  m_text: "A \uFF1A\u5DE6\u79FB  D \uFF1A\u53F3\u79FB  W \uFF1A\u51CF\u901F  S \uFF1A\u52A0\u901F\n\nspace:\u5F39\u53CD\n\nesc\uFF1A\u6682\u505C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 678fd67ac168d9f40a17259e7d7dec9c, type: 2}
   m_sharedMaterial: {fileID: 8186947048369328157, guid: 678fd67ac168d9f40a17259e7d7dec9c, type: 2}
@@ -1701,7 +1701,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -140.74182, y: 58.13257, z: -165.21863, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
