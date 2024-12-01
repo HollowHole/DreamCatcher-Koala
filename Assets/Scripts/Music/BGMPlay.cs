@@ -8,6 +8,7 @@ public class BGMPlay : MonoBehaviour
     public static BGMPlay instance;
     AudioSource bgmAudioSource;
     List<AudioSource> audioSourceList;
+
     private void Awake()
     {
         bgmAudioSource = GetComponent<AudioSource>();

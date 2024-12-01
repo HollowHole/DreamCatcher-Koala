@@ -958,7 +958,7 @@ MonoBehaviour:
   SpawnedObjects: {fileID: 683104922}
   spawnerDataEasy: {fileID: 11400000, guid: 06dba8adb2153cb4396b4718e40bf70a, type: 2}
   spawnerDataHard: {fileID: 0}
-  CameraWidth: 18
+  CameraWidth: 22
 --- !u!1 &209451311
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class ClawSpawner : BallSpawner
         Claw claw = go.GetComponent<Claw>();
         claw.SetDirection(direction ==1 ? Claw.Direction.Right : Claw.Direction.Left);
         if (direction == -1)
-            claw.transform.Rotate(0, 0, 180);
+            claw.transform.localScale = new Vector3(-1, 1, 1);
         claw.Length = Random.Range(clawData.minLength, clawData.maxLength);
         claw.strechOutTime = clawData.ClawStrechOutTime;
         claw.strechBackTime = clawData.ClawStrechBackTime;

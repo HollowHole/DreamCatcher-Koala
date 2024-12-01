@@ -12,7 +12,7 @@ public class Claw : Ball
     public float strechOutTime;
     public float strechBackTime;
     Direction m_direction;
-    bool alerting;
+    
     
     public AudioClip appearSoundClip;
     public override void UpdateView()
@@ -24,43 +24,19 @@ public class Claw : Ball
         base.Awake();
         StartCoroutine(Func());
     }
-    new private void Update()
-    {
-        base.Update();
-        if (alerting)
-        {
-            //显示黄色叹号
-            
-            if (appearSoundClip != null)
-            {
-                if (BGMPlay.instance != null)
-                    BGMPlay.instance.PlayMusic(appearSoundClip);
-            }
-        }
-    }
-    public void SetDirection(Direction direction)
-    {
-        m_direction = direction;
-    }
-    protected void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            HitPlayer(other.gameObject.GetComponent<PlayerController>());
-        }
-    }
-    protected override void HitPlayer(PlayerController player)
-    {
-        if (isHostile)
-            player.Hp--;
-    }
-
     IEnumerator Func()
     {
-        
-        alerting = true;
+        //music
+        if (appearSoundClip != null)
+        {
+            if (BGMPlay.instance != null)
+                BGMPlay.instance.PlayMusic(appearSoundClip);
+        }
+
         yield return new WaitForSeconds(3);
-        alerting = false;
+        //kill alert animation
+        transform.GetChild(0).gameObject.SetActive(false);
+
         int direction = 1;
         if (m_direction == Direction.Right)
         {
@@ -84,6 +60,31 @@ public class Claw : Ball
         Destroy(gameObject);
 
     }
+    new private void Update()
+    {
+        base.Update();
+    }
+    public void SetDirection(Direction direction)
+    {
+        m_direction = direction;
+    }
+    protected void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            HitPlayer(other.gameObject.GetComponent<PlayerController>());
+        }
+    }
+    protected override void HitPlayer(PlayerController player)
+    {
+        if (isHostile)
+        {
+            player.Hp--;
+            Friendly = true;
+        }
+    }
+
+
     protected override void HandleRotation()
     {
         //Do nothing
