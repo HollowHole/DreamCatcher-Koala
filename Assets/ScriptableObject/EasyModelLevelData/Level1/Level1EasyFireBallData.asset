@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Level1EasyFireBallData
   m_EditorClassIdentifier: 
   MaxBallCount: 5
-  SpawnPointOffsetH: 8
-  minVyOffset: 3
-  maxVyOffset: 8
-  vxRange: 5
   SpawnCD: 0.6
+  SpawnPointOffsetH: 8
+  minVyOffset: 2
+  maxVyOffset: 7
+  vxRange: 5
   minGravity: 0
   maxGravity: 0.09
