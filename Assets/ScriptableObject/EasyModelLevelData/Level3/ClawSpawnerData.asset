@@ -24,6 +24,6 @@ MonoBehaviour:
   ClawStrechBackTime: 2
   AlertTime: 1
   SpawnOffsetVerticalMin: 20
-  SpawnOffsetVerticalMax: 40
+  SpawnOffsetVerticalMax: 30
   minLength: 2
   maxLength: 5

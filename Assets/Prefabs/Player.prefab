@@ -323,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDataEasy: {fileID: 11400000, guid: 32eb928936f56b046b36f00726883e3e, type: 2}
   playerDataHard: {fileID: 11400000, guid: 842517d34d2aa3d4a83a070d1f25cc4c, type: 2}
-  playerHurtMusic: {fileID: 8300000, guid: d358d684eb3a31a40a3f8fc1c64b151b, type: 3}
+  playerHurtMusic: {fileID: 8300000, guid: 575b70e59a3847d43826f8822c18f427, type: 3}
   camController: {fileID: 0}
   CamFollowStart: {fileID: 0}
   CamFollowEnd: {fileID: 0}
