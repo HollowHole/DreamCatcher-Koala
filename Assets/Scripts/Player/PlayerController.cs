@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerData playerDataEasy;
     [SerializeField] PlayerData playerDataHard;
     PlayerData playerData;
-    
+    AudioClip playerHurtMusic;
     [SerializeField] CameraController camController;
     [SerializeField] public Transform CamFollowStart;
     [SerializeField] public Transform CamFollowEnd;
@@ -89,6 +89,11 @@ public class PlayerController : MonoBehaviour
             hp = playerData.hpInit;
         }
         Instance = this;
+        //
+        HpChange += (i) =>
+        {
+            BGMPlay.instance.PlayMusic(playerHurtMusic);
+        };
     }
     private void Start()
     {
