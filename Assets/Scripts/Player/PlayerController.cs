@@ -10,12 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerData playerDataEasy;
     [SerializeField] PlayerData playerDataHard;
     PlayerData playerData;
-    AudioClip playerHurtMusic;
+    [SerializeField]AudioClip playerHurtMusic;
     [SerializeField] CameraController camController;
     [SerializeField] public Transform CamFollowStart;
     [SerializeField] public Transform CamFollowEnd;
 
     [SerializeField] SpriteRenderer invincibalCircal;
+    private float invinOriginAlpha;
     [SerializeField] SpriteRenderer CounterCircal;
 
     Rigidbody2D rb;
@@ -77,6 +78,8 @@ public class PlayerController : MonoBehaviour
         
         //getSO
         playerData = (playerDataHard != null && DifficultySetting.HardMode) ? playerDataHard:playerDataEasy;
+        //read invincibal config
+        invinOriginAlpha = invincibalCircal.color.a;
         //Reset Falling Speed
         curFallingSpeed = playerData.FallingSpeedInit;
 
@@ -92,7 +95,10 @@ public class PlayerController : MonoBehaviour
         //
         HpChange += (i) =>
         {
-            BGMPlay.instance.PlayMusic(playerHurtMusic);
+            if (BGMPlay.instance != null)
+            {
+                BGMPlay.instance.PlayMusic(playerHurtMusic);
+            }
         };
     }
     private void Start()
@@ -131,6 +137,8 @@ public class PlayerController : MonoBehaviour
     {
         HorSpeedScalar = scalar;
     }
+
+    
     private void HandleStatusDisplay()
     {
         Color targetColor;
@@ -138,7 +146,7 @@ public class PlayerController : MonoBehaviour
         if (isInvincibal)
         {
             targetColor = invincibalCircal.color;
-            targetColor.a = 1f;
+            targetColor.a = invinOriginAlpha;
             invincibalCircal.color = targetColor;
         }
         else
@@ -173,7 +181,10 @@ public class PlayerController : MonoBehaviour
     }
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawSphere(transform.position, playerData.CounterRadius);
+        if (playerData != null)
+        {
+            Gizmos.DrawSphere(transform.position, playerData.CounterRadius);
+        }
     }
     private void HandleCounter()
     {
