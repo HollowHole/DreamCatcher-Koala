@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Level2EasyIceSpikeData
   m_EditorClassIdentifier: 
   MaxBallCount: 5
+  SpawnCD: 1
   SpawnPointOffsetH: 8
   minVyOffset: 0
   maxVyOffset: 1
   vxRange: 0
-  SpawnCD: 0.5
   minGravity: 0
   maxGravity: -0.025
