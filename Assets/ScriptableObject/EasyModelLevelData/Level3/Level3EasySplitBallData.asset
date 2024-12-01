@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a4005809a50e3458a63ab871e5fdab, type: 3}
   m_Name: Level3EasySplitBallData
   m_EditorClassIdentifier: 
-  MaxBallCount: 10
+  MaxBallCount: 5
+  SpawnCD: 0.5
   SpawnPointOffsetH: 8
   minVyOffset: 2
   maxVyOffset: 0
-  vxRange: 50
-  SpawnCD: 0.5
+  vxRange: 45
   minGravity: 0
   maxGravity: 0.01
