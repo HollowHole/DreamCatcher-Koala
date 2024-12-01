@@ -29,7 +29,7 @@ public class SplitBall : Ball
         BallList.Add(this.gameObject);
 
         childNum=2;
-        minSize=0.1f;
+        minSize=0.5f;
         hitBallFlag=false;
     }
     public override void UpdateView()
