@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1780726477174682377}
   - component: {fileID: 7706127717314038082}
   m_Layer: 0
-  m_Name: "\u88AB\u7B14\u7838\u9192\u8003\u62C9"
+  m_Name: HitKola
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
