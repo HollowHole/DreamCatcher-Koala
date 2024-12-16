@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject myBallPre;
 
-    // public Transform SpawnedObjects;
+    public Transform SpawnedObjects;
 
     public int Hp {
         get
@@ -291,19 +291,22 @@ public class PlayerController : MonoBehaviour
 
     private void HandleShoot(){
 
-        GameObject myball = Instantiate(myBallPre) as GameObject;
+        GameObject myball = Instantiate(myBallPre, SpawnedObjects) as GameObject;
         myball.transform.position=transform.position;
 
         Ball go=myball.GetComponent<Ball>();
+        go.Friendly=true;
 
         go.transform.position = transform.position;
 
         ArrowAim temp=transform.Find("Arrow").GetComponent<ArrowAim>();
         Vector3 dir=temp.dir;
-        Debug.Log(dir);
 
+        go.SetGravity(0f);
 
-        // Ball go = Instantiate(SpawningBalls, SpawnedObjects).GetComponent<Ball>();
+        // go.SetVelocity(new Vector2(vxOffset, vyOffset));
+        go.SetVelocity(new Vector2(dir.x, dir.y)*10);
+
     }
     
     private void HandleInput()
