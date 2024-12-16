@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     float inputHorizontal;
     float inputVertical;
     bool inputCounter;
+    bool inputShoot;
 
     bool isCountering => CounterLastTimer > 0;
     bool isCounterCoolDown => CounterCDTimer <= 0;
@@ -43,7 +44,9 @@ public class PlayerController : MonoBehaviour
     //-1:off 1:on
     private int cheatFlag=-1;
 
-    static private int ballNum=0;
+    static private int ballN=0;
+
+    public GameObject myBall;
 
     public int Hp {
         get
@@ -67,6 +70,20 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    
+
+    public int ballNum{
+        get{
+            // Debug.Log("Get_ballNum: "+ballN);
+            return ballN;
+        }
+        set{
+            Debug.Log("Set_ballNum: "+ballN);
+            ballN=value>=0?value:0;    
+        }
+    }
+    
     
 
     private void Awake()
@@ -217,8 +234,9 @@ public class PlayerController : MonoBehaviour
                     Ball b = collider.GetComponent<Ball>();
                     if (!b.Friendly)
                     {
-                        
-                        b.GetCountered(transform);
+                        Destroy(collider.gameObject);
+                        // b.GetCountered(transform);
+                        ballNum++;
                         //开启无敌时间 begin invincibal
                         SetInvincibal(playerData.InvincibalTime);
                     }
@@ -261,12 +279,42 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector2( curHorSpeed, -curFallingSpeed);
     } 
+
+    private void HandleShoot(){
+        if(!inputShoot) return;
+        if(ballNum<=0)  return;
+
+        // Ball go = Instantiate(SpawningBalls, SpawnedObjects).GetComponent<Ball>();
+    }
     
     private void HandleInput()
     {
         inputHorizontal = Input.GetAxis("Horizontal");
         inputVertical = Input.GetAxis("Vertical");
         inputCounter = Input.GetKeyDown(KeyCode.Space);
+        inputShoot = Input.GetMouseButtonUp(1);
     }
 
 }
+
+
+
+    // protected virtual void DoSpawn()
+    // {
+    //     Ball go = Instantiate(SpawningBalls, SpawnedObjects).GetComponent<Ball>();
+
+    //     go.SetSpawner(this);
+    //     //SpawnOffset
+    //     float SpawnOffset = Random.Range(-spawnerData.SpawnPointOffsetH, spawnerData.SpawnPointOffsetH);
+    //     go.transform.position = transform.position + new Vector3(SpawnOffset, 0, 0);
+    //     //Set Velocity
+    //     float vyOffset = Random.Range(spawnerData.minVyOffset, spawnerData.maxVyOffset);
+    //     float vxOffset = Random.Range(-spawnerData.vxRange, spawnerData.vxRange);
+    //     go.SetVelocity(new Vector2(vxOffset, vyOffset));
+    //     //Set Gravity
+    //     go.SetGravity(Random.Range(spawnerData.minGravity, spawnerData.maxGravity));
+    //     //Add to list
+    //     ExistingBalls.Add(go);
+    //     //reset CD
+    //     SpawnTimer = spawnerData.SpawnCD;
+    // }
