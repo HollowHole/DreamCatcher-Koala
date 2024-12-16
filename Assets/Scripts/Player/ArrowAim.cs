@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ArrowAim : MonoBehaviour
 {
+    public Vector3 dir;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ void Update()
         Vector3 mousePos_w = Camera.main.ScreenToWorldPoint(mousePos_s);
         mousePos_w.z=fixedEndPoint.z;
 
-        Vector3 dir = (mousePos_w - fixedEndPoint).normalized;
+        dir = (mousePos_w - fixedEndPoint).normalized;
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 

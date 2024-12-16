@@ -46,7 +46,9 @@ public class PlayerController : MonoBehaviour
 
     static private int ballN=0;
 
-    public GameObject myBall;
+    public GameObject myBallPre;
+
+    // public Transform SpawnedObjects;
 
     public int Hp {
         get
@@ -80,7 +82,7 @@ public class PlayerController : MonoBehaviour
         }
         set{
             Debug.Log("Set_ballNum: "+ballN);
-            ballN=value>=0?value:0;    
+            ballN=(value>=0?value:0);    
         }
     }
     
@@ -153,6 +155,13 @@ public class PlayerController : MonoBehaviour
         buffManager.HandleBuffEffect();
 
         HandleCounter();
+
+        if(inputShoot&&ballNum>0){
+            HandleShoot();
+            ballNum--;
+        }
+            
+
     }
     public void ChangeSpeedHor(float scalar)
     {
@@ -252,7 +261,7 @@ public class PlayerController : MonoBehaviour
     private void HandleCheatOpe()
     {
         
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             // Hp++;
             cheatFlag*=-1;
@@ -281,8 +290,18 @@ public class PlayerController : MonoBehaviour
     } 
 
     private void HandleShoot(){
-        if(!inputShoot) return;
-        if(ballNum<=0)  return;
+
+        GameObject myball = Instantiate(myBallPre) as GameObject;
+        myball.transform.position=transform.position;
+
+        Ball go=myball.GetComponent<Ball>();
+
+        go.transform.position = transform.position;
+
+        ArrowAim temp=transform.Find("Arrow").GetComponent<ArrowAim>();
+        Vector3 dir=temp.dir;
+        Debug.Log(dir);
+
 
         // Ball go = Instantiate(SpawningBalls, SpawnedObjects).GetComponent<Ball>();
     }
