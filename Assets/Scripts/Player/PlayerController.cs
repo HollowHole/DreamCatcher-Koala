@@ -124,6 +124,8 @@ public class PlayerController : MonoBehaviour
         else
         {
             hp = playerData.hpInit;
+            ballNum=0;
+            
         }
         Instance = this;
         //
