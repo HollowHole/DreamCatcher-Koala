@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
     //-1:off 1:on
     private int cheatFlag=-1;
 
+    static private int ballNum=0;
+
     public int Hp {
         get
         {
@@ -100,6 +102,8 @@ public class PlayerController : MonoBehaviour
                 BGMPlay.instance.PlayMusic(playerHurtMusic);
             }
         };
+
+        // ballNum=0;
     }
     private void Start()
     {
@@ -198,7 +202,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (inputCounter)
         {
-            Debug.Log("CD中");
+            Debug.Log("CDing");
         }
 
 
