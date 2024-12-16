@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+using TMPro;
+using UnityEngine.UI;
+
+
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
@@ -50,6 +55,8 @@ public class PlayerController : MonoBehaviour
 
     public Transform SpawnedObjects;
 
+
+
     public int Hp {
         get
         {
@@ -65,6 +72,7 @@ public class PlayerController : MonoBehaviour
             hp = value;
             if(hp == 0)
             {
+                ballNum=0;
                 GameoverMgr.Instance.Gameover();
             }
             HpChange?.Invoke(value);
@@ -81,12 +89,17 @@ public class PlayerController : MonoBehaviour
             return ballN;
         }
         set{
-            Debug.Log("Set_ballNum: "+ballN);
-            ballN=(value>=0?value:0);    
+            // Debug.Log("Set_ballNum: "+ballN);
+            ballN=(value>=0?value:0); 
         }
     }
     
-    
+    private void UpdateBallNumUI(int value){
+        Transform ballNumText=GameObject.Find("MyBallUI").transform.Find("Text");
+        TextMeshProUGUI textCont=ballNumText.GetComponent<TextMeshProUGUI>();
+        textCont.text=value.ToString();
+        // Debug.Log("BallText:"+textCont.text);
+    }
 
     private void Awake()
     {
@@ -122,11 +135,15 @@ public class PlayerController : MonoBehaviour
             }
         };
 
-        // ballNum=0;
+
+
+
     }
     private void Start()
     {
         // camController = Camera.main.GetComponent<CameraController>();
+        // UpdateBallNumUI(ballNum);
+        
         
     }
     private void FixedUpdate()
@@ -139,6 +156,9 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+
+        UpdateBallNumUI(ballNum);
+        
         //Reset Horizontal Speed
         HorSpeedScalar = 1f;
         
@@ -319,24 +339,3 @@ public class PlayerController : MonoBehaviour
 
 }
 
-
-
-    // protected virtual void DoSpawn()
-    // {
-    //     Ball go = Instantiate(SpawningBalls, SpawnedObjects).GetComponent<Ball>();
-
-    //     go.SetSpawner(this);
-    //     //SpawnOffset
-    //     float SpawnOffset = Random.Range(-spawnerData.SpawnPointOffsetH, spawnerData.SpawnPointOffsetH);
-    //     go.transform.position = transform.position + new Vector3(SpawnOffset, 0, 0);
-    //     //Set Velocity
-    //     float vyOffset = Random.Range(spawnerData.minVyOffset, spawnerData.maxVyOffset);
-    //     float vxOffset = Random.Range(-spawnerData.vxRange, spawnerData.vxRange);
-    //     go.SetVelocity(new Vector2(vxOffset, vyOffset));
-    //     //Set Gravity
-    //     go.SetGravity(Random.Range(spawnerData.minGravity, spawnerData.maxGravity));
-    //     //Add to list
-    //     ExistingBalls.Add(go);
-    //     //reset CD
-    //     SpawnTimer = spawnerData.SpawnCD;
-    // }
