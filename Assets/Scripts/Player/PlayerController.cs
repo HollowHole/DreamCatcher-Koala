@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private float invinOriginAlpha;
     [SerializeField] SpriteRenderer CounterCircal;
 
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
     private BuffManager buffManager;
 
     float curFallingSpeed;
@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour
     public Transform SpawnedObjects;
 
 
+    // public TextMeshProUGUI BallNumText;
+    // public GameObject myballUIPre;
 
     public int Hp {
         get
@@ -91,15 +93,19 @@ public class PlayerController : MonoBehaviour
         set{
             // Debug.Log("Set_ballNum: "+ballN);
             ballN=(value>=0?value:0); 
+            // UpdateBallNumUI(value);
+            if(SetBallNumUI.Instance!=null)
+                SetBallNumUI.Instance.UpdateUI(value);
         }
     }
     
-    private void UpdateBallNumUI(int value){
-        Transform ballNumText=GameObject.Find("MyBallUI").transform.Find("Text");
-        TextMeshProUGUI textCont=ballNumText.GetComponent<TextMeshProUGUI>();
-        textCont.text=value.ToString();
-        // Debug.Log("BallText:"+textCont.text);
-    }
+    // private void UpdateBallNumUI(int value){
+    //     Transform tempUI=GameObject.Find("MyBallUI").transform.Find("Text");
+    //     TextMeshProUGUI BallNumText=tempUI.GetComponent<TextMeshProUGUI>();
+    //     // if(BallNumText==null)   return;
+    //     BallNumText.text=value.ToString();
+    //     // Debug.Log("BallText:"+textCont.text);
+    // }
 
     private void Awake()
     {
@@ -123,7 +129,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+
             hp = playerData.hpInit;
+            // BallNumText=null;
             ballNum=0;
             
         }
@@ -138,14 +146,16 @@ public class PlayerController : MonoBehaviour
         };
 
 
-
-
     }
     private void Start()
     {
         // camController = Camera.main.GetComponent<CameraController>();
-        // UpdateBallNumUI(ballNum);
+
+        // Transform tempUI=GameObject.Find("MyBallUI").transform.Find("Text");
+
+        // BallNumText=tempUI.GetComponent<TextMeshProUGUI>();
         
+        // UpdateBallNumUI(ballNum);
         
     }
     private void FixedUpdate()
@@ -159,7 +169,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
-        UpdateBallNumUI(ballNum);
+        // UpdateBallNumUI(ballNum);
         
         //Reset Horizontal Speed
         HorSpeedScalar = 1f;
@@ -321,14 +331,17 @@ public class PlayerController : MonoBehaviour
 
         go.transform.position = transform.position;
 
-        ArrowAim temp=transform.Find("Arrow").GetComponent<ArrowAim>();
-        Vector3 dir=temp.dir;
+        ArrowAim arrow=transform.Find("Arrow").GetComponent<ArrowAim>();
+        Vector3 dir=arrow.dir;
 
         go.SetGravity(0f);
 
         // go.SetVelocity(new Vector2(vxOffset, vyOffset));
-        go.SetVelocity(new Vector2(dir.x, dir.y)*10);
+        Vector2 tempV=new Vector2(dir.x, dir.y);
 
+        go.SetVelocity(tempV*20);
+
+        // rb.velocity -= tempV*100;
     }
     
     private void HandleInput()

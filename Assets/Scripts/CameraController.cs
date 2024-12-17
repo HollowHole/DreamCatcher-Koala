@@ -23,6 +23,7 @@ public class CameraController : MonoBehaviour
             transform.position = pos;
         }
     }
+    
     public void FollowPlayer(bool flag)
     {
         if (isFollowingPlayer == flag)
