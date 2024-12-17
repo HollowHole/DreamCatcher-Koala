@@ -9,6 +9,20 @@ public class CameraController : MonoBehaviour
     Transform player;
     
     bool isFollowingPlayer;
+
+    static private float scP=0f;
+
+    public float score{
+        get{
+            // Debug.Log("Get_ballNum: "+ballN);
+            return scP;
+        }
+        set{
+            // Debug.Log("Set_ballNum: "+ballN);
+            scP=(value>=0?value:0); 
+        }
+    }
+
     private void Start()
     {
         isFollowingPlayer = false;
@@ -16,11 +30,16 @@ public class CameraController : MonoBehaviour
     }
     private void Update()
     {
+        if(SetUI_ofPlayer.Instance!=null)
+            SetUI_ofPlayer.Instance.UpdateUI(((int)score));
+
         if (isFollowingPlayer)
         {
             Vector3 pos = transform.position;
             pos.y = player.position.y + PlayerOffset;
             transform.position = pos;
+
+            score+=Time.deltaTime;
         }
     }
     

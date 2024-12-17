@@ -133,6 +133,9 @@ public class PlayerController : MonoBehaviour
             hp = playerData.hpInit;
             // BallNumText=null;
             ballNum=0;
+
+            CameraController cmcc=Camera.main.GetComponent<CameraController>();
+            cmcc.score=0f;
             
         }
         Instance = this;

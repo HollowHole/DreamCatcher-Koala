@@ -115,6 +115,8 @@ public abstract class Ball : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 Destroy(gameObject);
+                CameraController cmcc=Camera.main.GetComponent<CameraController>();
+                cmcc.score+=77f;
             }
         }
     }

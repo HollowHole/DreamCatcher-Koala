@@ -16,9 +16,13 @@ public class SetUI_ofPlayer : MonoBehaviour
         contText.text=value.ToString();
     }
 
-    protected void Awake(){
+    void Awake(){
         Instance=this;
         contText=transform.GetComponent<TextMeshProUGUI>();
     }
+
+    // protected virtual void Start(){
+    //     contText=transform.GetComponent<TextMeshProUGUI>();
+    // }
 
 }

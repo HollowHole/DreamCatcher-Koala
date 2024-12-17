@@ -6,25 +6,24 @@ using TMPro;
 using UnityEngine.UI;
 
 
-public class SetBallNumUI : MonoBehaviour
+public class SetBallNumUI : SetUI_ofPlayer
 {
     public static SetBallNumUI Instance { get; private set; }
 
-    private TextMeshProUGUI ballNumText;
+    // private TextMeshProUGUI contText;
     private int oriHp;
 
-    public void UpdateUI(int value){
-        ballNumText.text=value.ToString();
+    public override void UpdateUI(int value){
+        base.UpdateUI(value);
         oriHp=value;
     }
 
-    // Start is called before the first frame update
     void Awake(){
         Instance=this;
-        ballNumText=transform.GetComponent<TextMeshProUGUI>();
+        contText=transform.GetComponent<TextMeshProUGUI>();
     }
 
-    void Start()
+    private void Start()
     {
         // PlayerController.Instance.UpdateBallNumUI(PlayerController.Instance.ballNum);
         oriHp=PlayerController.Instance.ballNum;
