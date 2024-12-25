@@ -134,8 +134,9 @@ public class PlayerController : MonoBehaviour
             // BallNumText=null;
             ballNum=0;
 
-            CameraController cmcc=Camera.main.GetComponent<CameraController>();
-            cmcc.score=0f;
+            // CameraController cmcc=Camera.main.GetComponent<CameraController>();
+            // cmcc.score=0f;
+            camController.score=0f;
             
         }
         Instance = this;
