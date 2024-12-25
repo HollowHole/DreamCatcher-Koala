@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1748,7 +1747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A \uFF1A\u5DE6\u79FB  D \uFF1A\u53F3\u79FB  W \uFF1A\u51CF\u901F  S \uFF1A\u52A0\u901F\n\nspace:\u5F39\u53CD\n\nesc\uFF1A\u6682\u505C"
+  m_text: "A \uFF1A\u5DE6\u79FB  D \uFF1A\u53F3\u79FB  W \uFF1A\u51CF\u901F  S \uFF1A\u52A0\u901F\n\nspace:\u5438\u6536\u2014\u2014>\u5B50\u5F39+1\n\u9F20\u6807\u4F4D\u7F6E\u2014\u2014>\u5B50\u5F39\u53D1\u5C04\u65B9\u5411\n\u9F20\u6807\u53F3\u952E\u2014\u2014>\u53D1\u5C04\u5B50\u5F39\uFF0C\u5B50\u5F39-1\n\nesc\uFF1A\u6682\u505C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 678fd67ac168d9f40a17259e7d7dec9c, type: 2}
   m_sharedMaterial: {fileID: 8186947048369328157, guid: 678fd67ac168d9f40a17259e7d7dec9c, type: 2}
