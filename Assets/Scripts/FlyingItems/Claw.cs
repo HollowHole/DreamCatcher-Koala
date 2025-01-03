@@ -33,7 +33,7 @@ public class Claw : Ball
                 BGMPlay.instance.PlayMusic(appearSoundClip);
         }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         //kill alert animation
         transform.GetChild(0).gameObject.SetActive(false);
 
