@@ -1282,6 +1282,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487bc728ac0cd624c82402dff589e4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: 100
+  minAngle: 0
+  maxAngle: 60
+  orbitRadius: 0
+  lastAngle: 0
+  oriZ: -100
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0

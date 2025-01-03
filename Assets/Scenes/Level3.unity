@@ -449,6 +449,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487bc728ac0cd624c82402dff589e4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: 0
+  minAngle: 0
+  maxAngle: 0
+  orbitRadius: 0
+  lastAngle: 0
+  oriZ: 0
 --- !u!81 &643369672
 AudioListener:
   m_ObjectHideFlags: 0
@@ -813,7 +819,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.78358203, g: 0.5298507, b: 1, a: 1}
+  m_Color: {r: 0.7843137, g: 0.5294118, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
