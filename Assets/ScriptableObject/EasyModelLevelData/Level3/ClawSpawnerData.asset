@@ -22,7 +22,7 @@ MonoBehaviour:
   maxGravity: 0
   ClawStrechOutTime: 1
   ClawStrechBackTime: 2
-  AlertTime: 1
+  AlertTime: 10
   SpawnOffsetVerticalMin: 20
   SpawnOffsetVerticalMax: 30
   minLength: 2
