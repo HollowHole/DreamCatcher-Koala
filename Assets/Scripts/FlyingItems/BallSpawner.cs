@@ -39,6 +39,8 @@ public class BallSpawner : MonoBehaviour
         {
             DoSpawn();
         }
+        posZ_byCam();
+
     }
 
     protected virtual void DoSpawn()
@@ -64,5 +66,12 @@ public class BallSpawner : MonoBehaviour
     public void OnBallExit(Ball balls)
     {
         ExistingBalls.Remove(balls);
+    }
+
+    private void posZ_byCam(){
+        Vector3 pos=transform.position;
+        Vector3 camPos=transform.parent.position;
+        pos.z=(camPos.z)*0.1f;
+        transform.position=pos;
     }
 }
